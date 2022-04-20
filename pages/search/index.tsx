@@ -6,25 +6,15 @@ import MediaCard from "components/MediaCard";
 import SearchResultCard from "components/SearchResultCard";
 import TextField from "components/TextField";
 import { OMDB_API_MIN_SEARCH_TERM_LEN } from "constants/index";
+import useSearchContainer from "./useSearchContainer";
 
 // TODO: remove
 import useFetch from "hooks/useFetch";
 import { API_ROUTES } from "constants/index";
 
-const emptyStr = "";
-
 const Search: NextPage = () => {
-  const [searchTerm, setSearchTerm] = useState<string>(emptyStr);
-
-  const url = searchTerm
-    ? `${API_ROUTES.omdb}/?searchTerm=${searchTerm}`
-    : emptyStr; //
-  const { response, error, isFetching } = useFetch(url);
-
-  const onChange = (e) => {
-    const value = e?.target?.value || emptyStr;
-    setSearchTerm(value);
-  };
+  const { isFetching, searchTerm, onSearchFieldChange, searchResults } =
+    useSearchContainer();
 
   return (
     <div>
@@ -35,12 +25,14 @@ const Search: NextPage = () => {
         name="searchTerm"
         value={searchTerm}
         label="Search by title"
-        onChange={onChange}
+        onChange={onSearchFieldChange}
         helperText={`Enter ${OMDB_API_MIN_SEARCH_TERM_LEN} characters to begin search`}
       />
 
+      {isFetching && <div>Fetching...</div>}
+
       {/* Search list */}
-      {SEARCH_RESULTS.Search.map((result, i) => (
+      {searchResults.map((result, i) => (
         <SearchResultCard searchResult={result} key={i} />
       ))}
 
