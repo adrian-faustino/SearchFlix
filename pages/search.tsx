@@ -11,7 +11,7 @@ const Search: NextPage = () => {
       {/* Search bar */}
 
       {/* Movie/Series Card */}
-      <MediaCard media={MOVIE} />
+      <MediaCard media={SERIES} />
     </div>
   );
 };

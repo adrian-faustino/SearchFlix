@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 
 import { ISeries, IMovie } from "types/index";
+import { MEDIA_TYPES } from "constants/index";
 import styles from "./MediaCard.module.scss";
 
 type IMediaCardProps = {
@@ -8,6 +9,7 @@ type IMediaCardProps = {
 };
 
 const MediaCard: FunctionComponent<IMediaCardProps> = ({ media = {} }) => {
+  const [startYear] = media.Year?.split("–");
   return (
     <div className={styles.MediaCard}>
       {/* <img src={media.Poster} alt="Media poster" /> */}
@@ -16,10 +18,18 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media = {} }) => {
         <h3>{media.Title}</h3>
 
         <div>
-          <span>{media.Year}</span>
+          <span>{startYear}</span>
           <span>{media.Rated}</span>
           {/* TODO: format time if over 60m */}
-          <span>{media.Runtime}</span>
+          {media.Type === MEDIA_TYPES.movie && (
+            <span>
+              {media.Runtime}
+              {/* TODO: format plural */}
+            </span>
+          )}
+          {media.Type === MEDIA_TYPES.series && (
+            <span>{media.totalSeasons} season(s)</span>
+          )}
         </div>
 
         <div>

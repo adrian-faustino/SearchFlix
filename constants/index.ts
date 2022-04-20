@@ -5,6 +5,11 @@ export const APP_ROUTES = {
   search: "/search",
 };
 
+export const MEDIA_TYPES = {
+  movie: "movie",
+  series: "series",
+};
+
 // TODO: replace with fetched data
 export const MOVIE: IMovie = {
   Title: "Avatar",
