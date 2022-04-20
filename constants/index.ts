@@ -10,6 +10,9 @@ export const MEDIA_TYPES = {
   series: "series",
 };
 
+// TODO: use server
+export const IMDB_API_BASE_URL = `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}`;
+
 // TODO: replace with fetched data
 export const MOVIE: IMovie = {
   Title: "Avatar",
