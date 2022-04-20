@@ -1,10 +1,12 @@
+import { ISearchResult, IMovie, ISeries } from "types/index.ts";
+
 export const APP_ROUTES = {
   home: "/",
   search: "/search",
 };
 
 // TODO: replace with fetched data
-export const MOVIE = {
+export const MOVIE: IMovie = {
   Title: "Avatar",
   Year: "2009",
   Rated: "PG-13",
@@ -46,7 +48,7 @@ export const MOVIE = {
   Response: "True",
 };
 
-export const SERIES = {
+export const SERIES: ISeries = {
   Title: "The King's Avatar",
   Year: "2017–",
   Rated: "TV-13",
@@ -78,7 +80,7 @@ export const SERIES = {
 };
 
 // TODO: replace with fetched data
-export const SEARCH_RESULTS = {
+export const SEARCH_RESULTS: ISearchResult = {
   Search: [
     {
       Title: "Avatar",
