@@ -10,7 +10,7 @@ const Nav: FunctionComponent<INavProps> = () => {
     <nav className={styles.Nav}>
       <ol>
         <li>
-          <a href={APP_ROUTES.welcome}>Home</a>
+          <a href={APP_ROUTES.home}>Home</a>
         </li>
 
         <li>

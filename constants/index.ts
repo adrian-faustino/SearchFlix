@@ -1,4 +1,4 @@
 export const APP_ROUTES = {
-  welcome: "/welcome",
+  home: "/",
   search: "/search",
 };
