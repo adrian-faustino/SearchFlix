@@ -5,22 +5,25 @@ import { MOVIE, SERIES, SEARCH_RESULTS } from "constants/index";
 import MediaCard from "components/MediaCard";
 import SearchResultCard from "components/SearchResultCard";
 import TextField from "components/TextField";
+import { OMDB_API_MIN_SEARCH_TERM_LEN } from "constants/index";
 
 // TODO: remove
 import useFetch from "hooks/useFetch";
-import { IMDB_API_BASE_URL } from "constants/index";
+import { API_ROUTES } from "constants/index";
 
 const emptyStr = "";
 
 const Search: NextPage = () => {
-  const [searchVal, setSearchVal] = useState<string>(emptyStr);
+  const [searchTerm, setSearchTerm] = useState<string>(emptyStr);
 
-  const url = searchVal ? `${IMDB_API_BASE_URL}&s=${searchVal}` : emptyStr; //
+  const url = searchTerm
+    ? `${API_ROUTES.omdb}/?searchTerm=${searchTerm}`
+    : emptyStr; //
   const { response, error, isFetching } = useFetch(url);
 
   const onChange = (e) => {
     const value = e?.target?.value || emptyStr;
-    setSearchVal(value);
+    setSearchTerm(value);
   };
 
   return (
@@ -29,11 +32,11 @@ const Search: NextPage = () => {
 
       {/* Search bar */}
       <TextField
-        name="searchVal"
-        value={searchVal}
+        name="searchTerm"
+        value={searchTerm}
         label="Search by title"
         onChange={onChange}
-        helperText="Enter more than 3 chars"
+        helperText={`Enter ${OMDB_API_MIN_SEARCH_TERM_LEN} characters to begin search`}
       />
 
       {/* Search list */}

@@ -5,10 +5,16 @@ export const APP_ROUTES = {
   search: "/search",
 };
 
+export const API_ROUTES = {
+  omdb: "/api/omdb",
+};
+
 export const MEDIA_TYPES = {
   movie: "movie",
   series: "series",
 };
+
+export const OMDB_API_MIN_SEARCH_TERM_LEN = 4;
 
 // TODO: use server
 export const IMDB_API_BASE_URL = `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}`;

@@ -45,3 +45,9 @@ export interface IMovie extends IMedia {
 export interface ISeries extends IMedia {
   totalSeasons: string;
 }
+
+export interface IOmdbApiResponse = {
+  Search: ISearchResult[];
+  totalResults: string;
+  Response: string;
+};

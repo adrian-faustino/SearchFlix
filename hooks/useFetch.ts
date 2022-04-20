@@ -20,6 +20,7 @@ const useFetch = (url: string, options, debounceMs?: number) => {
         const res = await fetch(searchTerm, options);
         const json = await res.json();
         if (!signal.aborted) {
+          console.log("@@@@ Res:", json);
           setResponse(json);
         }
       } catch (e) {
