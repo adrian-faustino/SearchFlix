@@ -1,10 +1,13 @@
-import { IMDB_API_BASE_URL } from "constants/index";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const useFetch = (url, options) => {
+import { IMDB_API_BASE_URL } from "constants/index";
+import useDebounce from "hooks/useDebounce";
+
+const useFetch = (url: string, options, debounceMs?: number) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
   const [isFetching, setIsFetching] = useState<boolean>(false);
+  const searchTerm = useDebounce(url, debounceMs);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -14,7 +17,7 @@ const useFetch = (url, options) => {
       console.log("@@@@ Fetching...");
       setIsFetching(true);
       try {
-        const res = await fetch(url, options);
+        const res = await fetch(searchTerm, options);
         const json = await res.json();
         if (!signal.aborted) {
           setResponse(json);
@@ -30,15 +33,21 @@ const useFetch = (url, options) => {
       }
     };
 
-    onFetchData();
+    if (searchTerm) {
+      onFetchData();
+    }
 
     return () => {
       // prevent memory leak when component unmounts and data returns
       abortController.abort();
     };
-  }, [url]);
+  }, [searchTerm]);
 
   return { response, error, isFetching };
 };
 
 export default useFetch;
+
+/*
+ * Reference: https://morioh.com/p/74097abd01bf
+ */

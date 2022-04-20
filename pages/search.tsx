@@ -10,14 +10,16 @@ import TextField from "components/TextField";
 import useFetch from "hooks/useFetch";
 import { IMDB_API_BASE_URL } from "constants/index";
 
-const Search: NextPage = () => {
-  const [searchVal, setSearchVal] = useState<string>("avatar");
+const emptyStr = "";
 
-  const url = `${IMDB_API_BASE_URL}&s=${searchVal}`;
+const Search: NextPage = () => {
+  const [searchVal, setSearchVal] = useState<string>(emptyStr);
+
+  const url = searchVal ? `${IMDB_API_BASE_URL}&s=${searchVal}` : emptyStr; //
   const { response, error, isFetching } = useFetch(url);
 
   const onChange = (e) => {
-    const value = e?.target?.value || "";
+    const value = e?.target?.value || emptyStr;
     setSearchVal(value);
   };
 
