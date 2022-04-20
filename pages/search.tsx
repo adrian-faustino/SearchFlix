@@ -1,7 +1,15 @@
-import React from "react";
+import type { NextPage } from "next";
 
-const Search = () => {
-  return <div>Search page</div>;
+const Search: NextPage = () => {
+  return (
+    <div>
+      <h1>Search</h1>
+
+      {/* Search bar */}
+
+      {/* Movie/Series Card */}
+    </div>
+  );
 };
 
 export default Search;
