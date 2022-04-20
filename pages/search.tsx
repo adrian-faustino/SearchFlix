@@ -1,5 +1,8 @@
 import type { NextPage } from "next";
 
+import { MOVIE, SERIES } from "constants/index";
+import MediaCard from "components/MediaCard";
+
 const Search: NextPage = () => {
   return (
     <div>
@@ -8,6 +11,7 @@ const Search: NextPage = () => {
       {/* Search bar */}
 
       {/* Movie/Series Card */}
+      <MediaCard media={MOVIE} />
     </div>
   );
 };
