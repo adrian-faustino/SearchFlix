@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import Nav from "components/Nav";
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -11,6 +13,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <Nav />
+
         <h1>Welcome to my OMDb app!</h1>
       </main>
     </div>
