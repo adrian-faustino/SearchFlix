@@ -34,8 +34,8 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
         </div>
 
         <div>
-          {media.Genre.split(", ").map((genre) => (
-            <span>{genre}</span>
+          {media.Genre.split(", ").map((genre, i) => (
+            <span key={i}>{genre}</span>
           ))}
         </div>
 

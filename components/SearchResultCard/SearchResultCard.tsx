@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 
 import { ISearchResult } from "types/index";
-import { MEDIA_TYPES } from "constants/index";
 import styles from "./SearchResultCard.module.scss";
 
 type ISearchResultCardProps = {
