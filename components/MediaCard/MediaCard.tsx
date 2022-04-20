@@ -8,7 +8,8 @@ type IMediaCardProps = {
   media: IMovie | ISeries;
 };
 
-const MediaCard: FunctionComponent<IMediaCardProps> = ({ media = {} }) => {
+const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
+  // TODO: dry up code into util fn
   const [startYear] = media.Year?.split("–");
   return (
     <div className={styles.MediaCard}>
@@ -55,6 +56,10 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media = {} }) => {
       </section>
     </div>
   );
+};
+
+MediaCard.defaultProps = {
+  media: {},
 };
 
 export default MediaCard;

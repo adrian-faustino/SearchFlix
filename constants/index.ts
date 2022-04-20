@@ -85,7 +85,7 @@ export const SERIES: ISeries = {
 };
 
 // TODO: replace with fetched data
-export const SEARCH_RESULTS: ISearchResult = {
+export const SEARCH_RESULTS = {
   Search: [
     {
       Title: "Avatar",
