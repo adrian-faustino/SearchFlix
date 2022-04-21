@@ -1,10 +1,11 @@
-import React, { FunctionComponent } from "react";
+import React, { useContext, FunctionComponent } from "react";
 import { Dialog as MuiDialog } from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 
 import Button, { BUTTON_VARIANTS } from "components/Button";
+import { DialogManagerContext } from "contexts/DialogManagerContext";
 import styles from "./Dialog.module.scss";
 
 type IDialogProps = {
@@ -26,8 +27,10 @@ const Dialog: FunctionComponent<IDialogProps> = ({
   onPrimaryBtnClick = emptyFn,
   onSecondaryBtnClick = emptyFn,
 }) => {
+  const { onCloseDialog } = useContext(DialogManagerContext);
+
   return (
-    <MuiDialog open={open}>
+    <MuiDialog onClose={onCloseDialog} open={open}>
       <DialogTitle>{title}</DialogTitle>
 
       <DialogContent>{content}</DialogContent>
