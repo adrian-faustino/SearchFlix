@@ -1,0 +1,14 @@
+@import "styles/colors";
+
+.search {
+  &__field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: $theme-grey;
+    color: $theme-white;
+
+    padding-bottom: 35px;
+  }
+}
