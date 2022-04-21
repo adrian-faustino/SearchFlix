@@ -13,11 +13,6 @@ type ILayoutProps = {
 
 const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
   const { dialogComponent, dialogProps } = useContext(DialogManagerContext);
-  console.log("@@@@ dialogComponent", dialogComponent);
-
-  const content = () => {
-    return <dialogComponent media={dialogProps} {...dialogProps} />;
-  };
 
   return (
     <>
@@ -34,7 +29,7 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
       <Dialog
         open={!!dialogComponent}
         title={dialogProps?.title}
-        content={!!dialogComponent && content}
+        content={dialogComponent}
         onPrimaryBtnClick={dialogProps?.onPrimaryBtnClick}
         onSecondaryBtnClick={dialogProps?.onSecondaryBtnClick}
       />

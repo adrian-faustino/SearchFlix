@@ -2,7 +2,7 @@ import React, { useContext, FunctionComponent } from "react";
 
 import { ISearchResult } from "types/index";
 import { DialogManagerContext } from "contexts/DialogManagerContext";
-import MediaCard from "components/MediaCard";
+import MediaCardDialog from "components/MediaCardDialog";
 import styles from "./SearchResultCard.module.scss";
 
 // TODO: remove
@@ -15,14 +15,13 @@ type ISearchResultCardProps = {
 const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
   searchResult,
 }) => {
-  const { imdbID } = searchResult;
-  const { setDialogComponent } = useContext(DialogManagerContext);
+  const { onOpenDialog } = useContext(DialogManagerContext);
 
   // TODO: dry up code into util fn
   const [startYear] = searchResult.Year?.split("–");
 
   const onCardClick = () => {
-    setDialogComponent();
+    onOpenDialog(<MediaCardDialog imdbID={searchResult.imdbID} />);
   };
 
   return (

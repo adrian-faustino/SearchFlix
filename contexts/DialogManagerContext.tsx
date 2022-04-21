@@ -8,14 +8,21 @@ const DialogManagerContextProvider: FunctionComponent<IButtonProps> = ({
   children,
 }) => {
   const [dialogComponent, setDialogComponent] = useState(null);
+  const [dialogProps, setDialogProps] = useState(null);
 
-  const closeDialog = () => {
+  const onOpenDialog = (dialogComponent, dialogProps) => {
+    setDialogComponent(dialogComponent);
+    if (dialogProps) setDialogProps(dialogProps);
+  };
+
+  const onCloseDialog = () => {
     setDialogComponent(null);
+    setDialogProps(null);
   };
 
   return (
     <DialogManagerContext.Provider
-      value={{ setDialogComponent, closeDialog, dialogComponent, dialogProps }}
+      value={{ onOpenDialog, onCloseDialog, dialogComponent, dialogProps }}
     >
       {children}
     </DialogManagerContext.Provider>
