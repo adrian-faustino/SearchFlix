@@ -1,16 +1,14 @@
 import type { NextPage } from "next";
-import { useState } from "react";
 
-import { MOVIE, SERIES, SEARCH_RESULTS } from "constants/index";
 import MediaCard from "components/MediaCard";
 import SearchResultCard from "components/SearchResultCard";
+import Dialog from "components/Dialog";
 import TextField from "components/TextField";
 import { OMDB_API_MIN_SEARCH_TERM_LEN } from "constants/index";
 import useSearchContainer from "./useSearchContainer";
 
-// TODO: remove
-import useFetch from "hooks/useFetch";
-import { API_ROUTES } from "constants/index";
+// TODO: Remove
+import { SERIES, SEARCH_RESULTS } from "constants/index";
 
 const Search: NextPage = () => {
   const { isFetching, searchTerm, onSearchFieldChange, searchResults } =
@@ -38,6 +36,12 @@ const Search: NextPage = () => {
 
       {/* Movie/Series Card */}
       <MediaCard media={SERIES} />
+
+      <Dialog
+        title="Dialog title"
+        content="Content ABCD"
+        onPrimaryBtnClick={() => {}}
+      />
     </div>
   );
 };
