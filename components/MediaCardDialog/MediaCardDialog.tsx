@@ -4,6 +4,7 @@ import { ISeries, IMovie } from "types/index";
 import useFetch from "hooks/useFetch";
 import { API_ROUTES } from "constants/index";
 import MediaCard from "components/MediaCard";
+import LoadingIndicator from "components/LoadingIndicator";
 
 type IMediaCardDialogProps = {
   imdbID;
@@ -17,7 +18,7 @@ const MediaCardDialog: FunctionComponent<IMediaCardDialogProps> = ({
 
   return (
     <>
-      {isFetching && <div>Loading...</div>}
+      {isFetching && <LoadingIndicator />}
       {response && <MediaCard media={response} />}
     </>
   );
