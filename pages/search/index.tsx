@@ -41,6 +41,7 @@ const Search: NextPage = () => {
         title="Dialog title"
         content="Content ABCD"
         onPrimaryBtnClick={() => {}}
+        onSecondaryBtnClick={() => {}}
       />
     </div>
   );
