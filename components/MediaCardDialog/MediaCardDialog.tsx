@@ -4,7 +4,7 @@ import { ISeries, IMovie } from "types/index";
 import useFetch from "hooks/useFetch";
 import { API_ROUTES } from "constants/index";
 import MediaCard from "components/MediaCard";
-import LoadingIndicator from "components/LoadingIndicator";
+import AsyncComponentWrapper from "components/AsyncComponentWrapper";
 
 type IMediaCardDialogProps = {
   imdbID;
@@ -17,10 +17,9 @@ const MediaCardDialog: FunctionComponent<IMediaCardDialogProps> = ({
   const { response, error, isFetching } = useFetch(url);
 
   return (
-    <>
-      {isFetching && <LoadingIndicator />}
+    <AsyncComponentWrapper isFetching={isFetching}>
       {response && <MediaCard media={response} />}
-    </>
+    </AsyncComponentWrapper>
   );
 };
 
