@@ -1,8 +1,10 @@
-import React, { FunctionComponent } from "react";
+import React, { useContext, FunctionComponent } from "react";
 import Head from "next/head";
 
 import Nav from "components/Nav";
 import Footer from "components/Footer";
+import Dialog from "components/Dialog";
+import { DialogManagerContext } from "contexts/DialogManagerContext";
 import styles from "./Layout.module.scss";
 
 type ILayoutProps = {
@@ -10,6 +12,13 @@ type ILayoutProps = {
 };
 
 const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
+  const { dialogComponent, dialogProps } = useContext(DialogManagerContext);
+  console.log("@@@@ dialogComponent", dialogComponent);
+
+  const content = () => {
+    return <dialogComponent media={dialogProps} {...dialogProps} />;
+  };
+
   return (
     <>
       <Head>
@@ -21,6 +30,14 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
       <Nav />
       <main className={styles.Layout__main}>{children}</main>
       <Footer />
+
+      <Dialog
+        open={!!dialogComponent}
+        title={dialogProps?.title}
+        content={!!dialogComponent && content}
+        onPrimaryBtnClick={dialogProps?.onPrimaryBtnClick}
+        onSecondaryBtnClick={dialogProps?.onSecondaryBtnClick}
+      />
     </>
   );
 };

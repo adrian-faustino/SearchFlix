@@ -8,6 +8,7 @@ import Button, { BUTTON_VARIANTS } from "components/Button";
 import styles from "./Dialog.module.scss";
 
 type IDialogProps = {
+  open: boolean;
   title: string;
   content: JSX.Element;
   variant: string;
@@ -18,6 +19,7 @@ type IDialogProps = {
 const emptyFn = () => {};
 
 const Dialog: FunctionComponent<IDialogProps> = ({
+  open,
   title,
   content,
   variant,
@@ -25,7 +27,7 @@ const Dialog: FunctionComponent<IDialogProps> = ({
   onSecondaryBtnClick = emptyFn,
 }) => {
   return (
-    <MuiDialog open>
+    <MuiDialog open={open}>
       <DialogTitle>{title}</DialogTitle>
 
       <DialogContent>{content}</DialogContent>

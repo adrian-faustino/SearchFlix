@@ -36,13 +36,6 @@ const Search: NextPage = () => {
 
       {/* Movie/Series Card */}
       <MediaCard media={SERIES} />
-
-      <Dialog
-        title="Dialog title"
-        content="Content ABCD"
-        onPrimaryBtnClick={() => {}}
-        onSecondaryBtnClick={() => {}}
-      />
     </div>
   );
 };

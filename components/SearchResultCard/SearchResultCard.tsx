@@ -1,7 +1,12 @@
-import React, { FunctionComponent } from "react";
+import React, { useContext, FunctionComponent } from "react";
 
 import { ISearchResult } from "types/index";
+import { DialogManagerContext } from "contexts/DialogManagerContext";
+import MediaCard from "components/MediaCard";
 import styles from "./SearchResultCard.module.scss";
+
+// TODO: remove
+import { SERIES } from "constants/index";
 
 type ISearchResultCardProps = {
   searchResult: ISearchResult;
@@ -10,10 +15,18 @@ type ISearchResultCardProps = {
 const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
   searchResult,
 }) => {
+  const { imdbID } = searchResult;
+  const { setDialogComponent } = useContext(DialogManagerContext);
+
   // TODO: dry up code into util fn
   const [startYear] = searchResult.Year?.split("–");
+
+  const onCardClick = () => {
+    setDialogComponent();
+  };
+
   return (
-    <div className={styles.SearchResultCard}>
+    <div className={styles.SearchResultCard} onClick={onCardClick}>
       {/* <img src={searchResult.Poster} alt="Media poster" /> */}
 
       <section>
