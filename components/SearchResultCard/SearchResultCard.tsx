@@ -3,6 +3,7 @@ import React, { useContext, FunctionComponent } from "react";
 import { ISearchResult } from "types/index";
 import { DialogManagerContext } from "contexts/DialogManagerContext";
 import MediaCardDialog from "components/MediaCardDialog";
+import { toTitleCase } from "utils/string";
 import styles from "./SearchResultCard.module.scss";
 
 // TODO: remove
@@ -38,7 +39,7 @@ const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
         <div className={styles.SearchResultCard__metaData}>
           <span>{startYear}</span>
           <span>•</span>
-          <span>{searchResult.Type}</span>
+          <span>{toTitleCase(searchResult.Type)}</span>
         </div>
       </section>
     </div>

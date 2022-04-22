@@ -20,9 +20,10 @@ const MediaCardDialog: FunctionComponent<IMediaCardDialogProps> = ({
   const { response, error, isFetching } = useFetch(url);
 
   return (
-    <AsyncComponentWrapper isFetching={isFetching}>
-      {response && <MediaCard media={response} />}
-    </AsyncComponentWrapper>
+    // <AsyncComponentWrapper isFetching={isFetching}>
+    //   {response && <MediaCard media={response} />}
+    // </AsyncComponentWrapper>
+    <MediaCard media={MOVIE} />
   );
 };
 
