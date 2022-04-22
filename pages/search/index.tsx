@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 
 import SearchResultCard from "components/SearchResultCard";
-import Dialog from "components/Dialog";
 import TextField from "components/TextField";
 import AsyncComponentWrapper from "components/AsyncComponentWrapper";
 import AppLogo from "components/AppLogo";

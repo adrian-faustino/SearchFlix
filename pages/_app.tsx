@@ -2,26 +2,19 @@ import type { AppProps } from "next/app";
 
 import Layout from "components/Layout";
 import DialogManagerContextProvider from "contexts/DialogManagerContext";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-
+import ThemeContextProvider from "contexts/ThemeContext";
 import "styles/index.scss";
 import "styles/utils.scss";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeContextProvider>
       <DialogManagerContextProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </DialogManagerContextProvider>
-    </ThemeProvider>
+    </ThemeContextProvider>
   );
 }
 
