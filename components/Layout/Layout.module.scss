@@ -1,9 +1,15 @@
 @import "styles/colors";
+@import "styles/constants";
 
 .Layout {
   &__main {
     background: $theme-black;
     color: $theme-white;
-    min-height: 100vh;
+
+    // @important: account for nav's fixed position
+    padding-top: $nav-height;
+
+    // @important: make footer be in view when there is not enough height to fill a page
+    min-height: calc(100vh - $nav-height);
   }
 }

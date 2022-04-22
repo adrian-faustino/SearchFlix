@@ -1,10 +1,14 @@
 @import "styles/colors";
+@import "styles/constants";
 
 .Nav {
+  display: flex;
+  height: $nav-height;
+  width: 100vw;
   background: $theme-black;
   color: $theme-white;
 
-  position: relative;
+  position: fixed;
   box-shadow: 0 0 1px $theme-white;
 
   > ol {
