@@ -1,6 +1,6 @@
 import React, { useContext, FunctionComponent } from "react";
-import Image from "next/image";
 
+import Image from "components/Image";
 import { ISearchResult } from "types/index";
 import { DialogManagerContext } from "contexts/DialogManagerContext";
 import MediaCardDialog from "components/MediaCardDialog";

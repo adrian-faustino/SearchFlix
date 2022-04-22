@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
-import Image from "next/image";
 
+import Image from "components/Image";
 import Anchor from "components/Anchor";
 import { IMovie, ISeries } from "types/index";
 import { MEDIA_TYPES } from "constants/index";
@@ -13,6 +13,7 @@ interface IMediaCardProps {
 const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
   // TODO: dry up code into util fn
   const [startYear] = media.Year?.split("–");
+
   return (
     <div className={styles.MediaCard}>
       <Image
