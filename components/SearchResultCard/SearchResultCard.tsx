@@ -29,7 +29,7 @@ const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
       <img
         className={styles.SearchResultCard__img}
         src={searchResult.Poster}
-        alt="Media poster"
+        alt={`${searchResult.Title} poster`}
       />
 
       <section className={styles.SearchResultCard__details}>

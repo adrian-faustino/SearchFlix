@@ -16,7 +16,7 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
       <img
         className={styles.MediaCard__img}
         src={media.Poster}
-        alt="Media poster"
+        alt={`${media.Title} poster`}
       />
 
       <section className={styles.MediaCard__details}>

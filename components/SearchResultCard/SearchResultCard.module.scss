@@ -32,6 +32,8 @@ $border-radius: 4px;
     width: $container-width;
     height: $container-height;
     border-radius: $border-radius;
+    // @IMPORTANT: provides color for alt text in the event images don't load
+    color: $theme-white;
   }
 
   &__details {
