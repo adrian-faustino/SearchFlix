@@ -26,13 +26,18 @@ const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
 
   return (
     <div className={styles.SearchResultCard} onClick={onCardClick}>
-      <img src={searchResult.Poster} alt="Media poster" />
+      <img
+        className={styles.SearchResultCard__img}
+        src={searchResult.Poster}
+        alt="Media poster"
+      />
 
-      <section>
-        <h4>{searchResult.Title}</h4>
+      <section className={styles.SearchResultCard__details}>
+        <h3>{searchResult.Title}</h3>
 
-        <div>
+        <div className={styles.SearchResultCard__metaData}>
           <span>{startYear}</span>
+          <span>•</span>
           <span>{searchResult.Type}</span>
         </div>
       </section>

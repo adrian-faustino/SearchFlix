@@ -1,7 +1,50 @@
 @import "styles/colors";
 
-.SearchResultCard {
-  border: 1px solid pink;
+$container-width: 250px;
+$container-height: 300px;
+$border-radius: 4px;
 
-  color: $theme-white;
+.SearchResultCard {
+  position: relative;
+  width: $container-width;
+  height: $container-height;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  // BEGIN: show details on hover
+  color: transparent;
+  transition: all 0.4s ease-out;
+  &:hover {
+    color: $theme-white;
+
+    .SearchResultCard__img {
+      opacity: 0.5;
+    }
+
+    .SearchResultCard__details {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+  // BEGIN: show details on hover
+
+  &__img {
+    object-fit: fill;
+    width: $container-width;
+    height: $container-height;
+    border-radius: $border-radius;
+  }
+
+  &__details {
+    position: absolute;
+    top: 0;
+    width: $container-width;
+    border-radius: $border-radius $border-radius 0 0;
+
+    padding: 0 15px 15px 15px;
+  }
+
+  &__metaData {
+    display: flex;
+    gap: 10px;
+  }
 }
