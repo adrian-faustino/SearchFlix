@@ -7,9 +7,10 @@
   width: 100vw;
   background: $theme-black;
   color: $theme-white;
+  box-shadow: 0 0 1px $theme-white;
 
   position: fixed;
-  box-shadow: 0 0 1px $theme-white;
+  z-index: 10;
 
   > ol {
     display: flex;
