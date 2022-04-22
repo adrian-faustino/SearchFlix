@@ -1,0 +1,26 @@
+@import "styles/colors";
+
+.SearchPage {
+  &__field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    background: $theme-grey;
+    color: $theme-white;
+    padding: 20px;
+  }
+
+  &__results {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    $gap-between-items: 20px;
+    gap: $gap-between-items;
+    padding: $gap-between-items;
+  }
+}

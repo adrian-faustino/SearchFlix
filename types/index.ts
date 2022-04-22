@@ -57,6 +57,7 @@ export type TGenericChildren =
   | React.ReactElement<any, any>
   | React.ReactElement<any, any>[]
   | string
-  | null;
+  | null
+  | any; // TODO: remove any
 export type TGenericClickEvent = React.MouseEvent<HTMLElement>;
 export type TGenericChangeEvent = React.ChangeEvent<HTMLElement>;

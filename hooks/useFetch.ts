@@ -18,13 +18,11 @@ const useFetch = (
     const { signal } = abortController;
 
     const onFetchData = async () => {
-      console.log("@@@@ Fetching...");
       setIsFetching(true);
       try {
         const res = await fetch(searchTerm, options);
         const json = await res.json();
         if (!signal.aborted) {
-          console.log("@@@@ Res:", json);
           setResponse(json);
         }
       } catch (e: unknown) {

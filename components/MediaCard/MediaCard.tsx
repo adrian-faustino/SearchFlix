@@ -7,7 +7,7 @@ import { MEDIA_TYPES } from "constants/index";
 import styles from "./MediaCard.module.scss";
 
 interface IMediaCardProps {
-  media: IMovie | ISeries;
+  media: IMovie | ISeries | any; // TODO: remove any
 }
 
 const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
@@ -42,8 +42,8 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
         </div>
 
         <div className={styles.MediaCard__details__genres}>
-          {media.Genre.split(", ").map((genre, i) => (
-            <small key={i}>{genre}</small>
+          {media.Genre.split(", ").map((genre: string) => (
+            <small key={genre}>{genre}</small>
           ))}
         </div>
 
