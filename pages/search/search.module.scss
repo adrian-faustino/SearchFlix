@@ -5,11 +5,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 
     background: $theme-grey;
     color: $theme-white;
 
-    padding-bottom: 35px;
+    padding: 20px;
   }
 
   &__results {

@@ -4,6 +4,7 @@ import SearchResultCard from "components/SearchResultCard";
 import Dialog from "components/Dialog";
 import TextField from "components/TextField";
 import AsyncComponentWrapper from "components/AsyncComponentWrapper";
+import AppLogo from "components/AppLogo";
 import { OMDB_API_MIN_SEARCH_TERM_LEN } from "constants/index";
 import useSearchContainer from "./useSearchContainer";
 import styles from "./search.module.scss";
@@ -18,7 +19,7 @@ const Search: NextPage = () => {
   return (
     <div className={styles.search}>
       <section className={styles.search__field}>
-        <h1>Search</h1>
+        <AppLogo />
 
         {/* Search bar */}
         <TextField
