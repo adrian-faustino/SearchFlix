@@ -1,2 +1,8 @@
+@import "styles/colors";
+
 .welcome {
+  &__about {
+    background: $theme-grey;
+    padding: 30px;
+  }
 }

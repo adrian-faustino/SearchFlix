@@ -1,5 +1,6 @@
 @import "styles/colors";
 
+// text related classes
 .color-primary {
   color: $text-color-primary;
 }
@@ -14,4 +15,30 @@
 }
 .bold {
   font-weight: bold;
+}
+
+// spacing related classes
+.margin-top-4 {
+  margin-top: 4px;
+}
+.margin-top-8 {
+  margin-top: 8px;
+}
+.margin-top-12 {
+  margin-top: 12px;
+}
+.margin-top-16 {
+  margin-top: 16px;
+}
+.margin-bottom-4 {
+  margin-bottom: 4px;
+}
+.margin-bottom-8 {
+  margin-bottom: 8px;
+}
+.margin-bottom-12 {
+  margin-bottom: 12px;
+}
+.margin-bottom-16 {
+  margin-bottom: 16px;
 }
