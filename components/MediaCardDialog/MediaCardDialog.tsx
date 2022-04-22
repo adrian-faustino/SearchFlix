@@ -1,6 +1,5 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 
-import { ISeries, IMovie } from "types/index";
 import useFetch from "hooks/useFetch";
 import { API_ROUTES } from "constants/index";
 import MediaCard from "components/MediaCard";

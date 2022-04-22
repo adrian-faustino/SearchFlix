@@ -79,6 +79,7 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
         </dl>
 
         <Anchor
+          isOpenNewTab
           className={styles.MediaCard__details__imdbLink}
           href={`https://www.imdb.com/title/${media.imdbID}`}
         >
