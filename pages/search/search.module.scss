@@ -11,4 +11,21 @@
 
     padding-bottom: 35px;
   }
+
+  &__results {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    $gap-between-items: 20px;
+    gap: $gap-between-items;
+    padding: $gap-between-items;
+
+    background: $theme-black;
+  }
+
+  &__loadingIndicator {
+  }
 }

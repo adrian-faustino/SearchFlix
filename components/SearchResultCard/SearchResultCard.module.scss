@@ -1,3 +1,7 @@
+@import "styles/colors";
+
 .SearchResultCard {
   border: 1px solid pink;
+
+  color: $theme-white;
 }

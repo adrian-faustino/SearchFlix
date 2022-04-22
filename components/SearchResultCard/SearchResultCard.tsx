@@ -26,7 +26,7 @@ const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
 
   return (
     <div className={styles.SearchResultCard} onClick={onCardClick}>
-      {/* <img src={searchResult.Poster} alt="Media poster" /> */}
+      <img src={searchResult.Poster} alt="Media poster" />
 
       <section>
         <h4>{searchResult.Title}</h4>

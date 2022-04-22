@@ -4,7 +4,7 @@ import MediaCard from "components/MediaCard";
 import SearchResultCard from "components/SearchResultCard";
 import Dialog from "components/Dialog";
 import TextField from "components/TextField";
-import LoadingIndicator from "components/LoadingIndicator";
+import AsyncComponentWrapper from "components/AsyncComponentWrapper";
 import { OMDB_API_MIN_SEARCH_TERM_LEN } from "constants/index";
 import useSearchContainer from "./useSearchContainer";
 import styles from "./search.module.scss";
@@ -31,12 +31,14 @@ const Search: NextPage = () => {
         />
       </section>
 
-      {isFetching && <LoadingIndicator />}
-
-      {/* Search list */}
-      {searchResults.map((result, i) => (
-        <SearchResultCard searchResult={result} key={i} />
-      ))}
+      <section className={styles.search__results}>
+        <AsyncComponentWrapper isFetching={isFetching}>
+          {/* Search list */}
+          {SEARCH_RESULTS.Search.map((result, i) => (
+            <SearchResultCard searchResult={result} key={i} />
+          ))}
+        </AsyncComponentWrapper>
+      </section>
 
       {/* Movie/Series Card */}
       <MediaCard media={SERIES} />
