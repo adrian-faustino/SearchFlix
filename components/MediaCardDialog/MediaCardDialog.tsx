@@ -6,6 +6,9 @@ import { API_ROUTES } from "constants/index";
 import MediaCard from "components/MediaCard";
 import AsyncComponentWrapper from "components/AsyncComponentWrapper";
 
+// TODO: remove
+import { MOVIE } from "constants/index";
+
 type IMediaCardDialogProps = {
   imdbID;
 };

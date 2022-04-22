@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 
-import MediaCard from "components/MediaCard";
 import SearchResultCard from "components/SearchResultCard";
 import Dialog from "components/Dialog";
 import TextField from "components/TextField";
@@ -10,7 +9,7 @@ import useSearchContainer from "./useSearchContainer";
 import styles from "./search.module.scss";
 
 // TODO: Remove
-import { SERIES, SEARCH_RESULTS } from "constants/index";
+import { SEARCH_RESULTS } from "constants/index";
 
 const Search: NextPage = () => {
   const { isFetching, searchTerm, onSearchFieldChange, searchResults } =
@@ -31,17 +30,14 @@ const Search: NextPage = () => {
         />
       </section>
 
+      {/* Search list */}
       <section className={styles.search__results}>
         <AsyncComponentWrapper isFetching={isFetching}>
-          {/* Search list */}
           {SEARCH_RESULTS.Search.map((result, i) => (
             <SearchResultCard searchResult={result} key={i} />
           ))}
         </AsyncComponentWrapper>
       </section>
-
-      {/* Movie/Series Card */}
-      <MediaCard media={SERIES} />
     </div>
   );
 };

@@ -30,7 +30,12 @@ const Dialog: FunctionComponent<IDialogProps> = ({
   const { onCloseDialog } = useContext(DialogManagerContext);
 
   return (
-    <MuiDialog onClose={onCloseDialog} open={open}>
+    <MuiDialog
+      className={styles.Dialog}
+      onClose={onCloseDialog}
+      open={open}
+      maxWidth={1000}
+    >
       <DialogTitle>{title}</DialogTitle>
 
       <DialogContent>{content}</DialogContent>

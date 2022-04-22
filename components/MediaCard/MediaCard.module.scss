@@ -1,5 +1,60 @@
 @import "styles/colors";
 
 .MediaCard {
-  border: 1px solid grey;
+  display: flex;
+  gap: 20px;
+  background-color: $mui-grey;
+  color: $theme-white;
+
+  &__img {
+    max-height: 500px;
+    max-width: 300px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+
+    &__subheader {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &__rating {
+        background: $theme-grey;
+        padding: 2px 4px;
+        border-radius: 2px;
+      }
+    }
+
+    &__genres {
+      display: flex;
+      gap: 4px;
+
+      > span {
+        padding: 2px 4px;
+        border: 1px solid $theme-grey;
+      }
+    }
+
+    &__descriptionList {
+    }
+
+    &__imdbLink {
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: $theme-black !important;
+      width: max-content;
+      margin-left: auto;
+
+      &:visited {
+        color: inherit;
+      }
+
+      text-decoration: none;
+      background: $imdb-yellow;
+    }
+  }
 }
