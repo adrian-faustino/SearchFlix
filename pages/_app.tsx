@@ -5,6 +5,7 @@ import DialogManagerContextProvider from "contexts/DialogManagerContext";
 import ThemeContextProvider from "contexts/ThemeContext";
 import "styles/index.scss";
 import "styles/utils.scss";
+import "styles/normalize.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

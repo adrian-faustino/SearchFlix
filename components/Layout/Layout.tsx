@@ -27,7 +27,9 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
       </Head>
 
       <Nav />
+
       <main className={styles.Layout__main}>{children}</main>
+
       <Footer />
 
       <Dialog
