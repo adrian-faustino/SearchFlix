@@ -11,7 +11,6 @@ interface IMediaCardProps {
 }
 
 const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
-  // TODO: dry up code into util fn
   const [startYear] = media.Year?.split("–");
 
   return (
@@ -32,13 +31,11 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
           <span className={styles.MediaCard__details__subheader__rating}>
             {media.Rated}
           </span>
-          {/* TODO: format time if over 60m */}
           {media.Type === MEDIA_TYPES.movie && (
-            <span className="bold">
-              {media.Runtime}
-              {/* TODO: format plural */}
-            </span>
+            <span className="bold">{media.Runtime}</span>
           )}
+
+          {/* TODO: format noun to plural/singular depending on series count */}
           {media.Type === MEDIA_TYPES.series && (
             <span>{media.totalSeasons} season(s)</span>
           )}

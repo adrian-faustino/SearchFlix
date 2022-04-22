@@ -48,8 +48,8 @@ export interface ISeries extends IMedia {
 
 export interface IOmdbApiResponse {
   Search: ISearchResult[];
-  totalResults: string;
   Response: string;
+  totalResults: string;
 }
 
 export type TGenericObject = { [key: string]: any };

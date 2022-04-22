@@ -16,7 +16,6 @@ const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
 }) => {
   const { onOpenDialog } = useContext(DialogManagerContext);
 
-  // TODO: dry up code into util fn
   const [startYear] = searchResult.Year?.split("–");
 
   const onCardClick = () => {

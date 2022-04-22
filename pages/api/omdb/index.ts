@@ -1,21 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { IOmdbApiResponse } from "types/index";
+import { IOmdbApiResponse, TGenericObject } from "types/index";
 import { OMDB_API_MIN_SEARCH_TERM_LEN } from "constants/index";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<IOmdbApiResponse>
+  res: NextApiResponse<IOmdbApiResponse | TGenericObject>
 ) {
   const {
     query: { searchTerm, imdbID },
-    method,
   } = req;
 
   // BEGIN: Validations
   if (!(searchTerm || imdbID)) {
     res.status(400).json({
-      error: "searchTerm or imdbID is required in request",
+      error: "'searchTerm' or 'imdbID' is required in request",
     });
   }
 
