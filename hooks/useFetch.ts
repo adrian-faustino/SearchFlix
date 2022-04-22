@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 
-import { IMDB_API_BASE_URL } from "constants/index";
+import { TGenericObject } from "types/index";
 import useDebounce from "hooks/useDebounce";
 
-const useFetch = (url: string, options, debounceMs?: number) => {
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
+const useFetch = (
+  url: string,
+  options?: TGenericObject,
+  debounceMs?: number
+) => {
+  const [response, setResponse] = useState<TGenericObject | null>(null);
+  const [error, setError] = useState<unknown>(null);
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const searchTerm = useDebounce(url, debounceMs);
 
@@ -23,7 +27,7 @@ const useFetch = (url: string, options, debounceMs?: number) => {
           console.log("@@@@ Res:", json);
           setResponse(json);
         }
-      } catch (e) {
+      } catch (e: unknown) {
         if (!signal.aborted) {
           setError(e);
         }

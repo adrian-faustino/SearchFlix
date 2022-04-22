@@ -2,19 +2,21 @@ import React, { FunctionComponent } from "react";
 import classNames from "classnames";
 
 import LoadingIndicator from "components/LoadingIndicator";
+import { TGenericChildren } from "types/index";
 import styles from "./AsyncComponentWrapper.module.scss";
 
-type IAsyncComponentWrapperProps = {
+interface IAsyncComponentWrapperProps {
   isFetching: boolean;
   className?: string;
-};
+  children: TGenericChildren;
+}
 
 const AsyncComponentWrapper: FunctionComponent<IAsyncComponentWrapperProps> = ({
   isFetching,
   className,
   children,
 }) => {
-  const containerClassnames = classNames(
+  const containerClassnames: string = classNames(
     styles.AsyncComponentWrapper,
     className
   );

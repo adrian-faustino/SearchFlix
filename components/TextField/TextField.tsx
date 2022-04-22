@@ -1,15 +1,18 @@
 import React, { FunctionComponent } from "react";
 import { TextField as MuiTextField } from "@mui/material";
+import classNames from "classnames";
 
+import { TGenericChangeEvent } from "types/index";
 import styles from "./TextField.module.scss";
 
-type ITextFieldProps = {
+interface ITextFieldProps {
   name: string;
   value: string;
   label: string;
-  onChange: (e) => void;
+  className?: string;
+  onChange: (e: TGenericChangeEvent) => void;
   helperText?: string;
-};
+}
 
 const emptyFn = () => {};
 
@@ -17,16 +20,19 @@ const TextField: FunctionComponent<ITextFieldProps> = ({
   name,
   value,
   label,
+  className,
   onChange,
-  onNamedChange,
   helperText,
 }) => {
+  const containerClassnames: string = classNames(className, styles.TextField);
+
   return (
     <>
       <MuiTextField
         name={name}
         value={value}
         label={label}
+        className={containerClassnames}
         onChange={onChange}
         helperText={helperText}
       />

@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import useFetch from "hooks/useFetch";
 import { API_ROUTES } from "constants/index";
+import { TGenericChangeEvent } from "types/index";
 
 const emptyStr = "";
 
@@ -13,8 +14,10 @@ const useSearchContainer = () => {
     : emptyStr;
   const { response, error, isFetching } = useFetch(url);
 
-  const onSearchFieldChange = (e) => {
-    const value = e?.target?.value || emptyStr;
+  const onSearchFieldChange = (e: TGenericChangeEvent) => {
+    const element = e.currentTarget as HTMLInputElement;
+    const value = element.value;
+
     setSearchTerm(value);
   };
 

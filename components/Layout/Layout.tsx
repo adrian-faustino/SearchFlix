@@ -5,11 +5,12 @@ import Nav from "components/Nav";
 import Footer from "components/Footer";
 import Dialog from "components/Dialog";
 import { DialogManagerContext } from "contexts/DialogManagerContext";
+import { TGenericChildren } from "types/index";
 import styles from "./Layout.module.scss";
 
-type ILayoutProps = {
-  children: any;
-};
+interface ILayoutProps {
+  children: TGenericChildren;
+}
 
 const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
   const { dialogComponent, dialogProps } = useContext(DialogManagerContext);

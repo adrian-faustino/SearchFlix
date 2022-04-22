@@ -1,4 +1,5 @@
 import React, { useContext, FunctionComponent } from "react";
+import Image from "next/image";
 
 import { ISearchResult } from "types/index";
 import { DialogManagerContext } from "contexts/DialogManagerContext";
@@ -9,9 +10,9 @@ import styles from "./SearchResultCard.module.scss";
 // TODO: remove
 import { SERIES } from "constants/index";
 
-type ISearchResultCardProps = {
+interface ISearchResultCardProps {
   searchResult: ISearchResult;
-};
+}
 
 const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
   searchResult,
@@ -27,10 +28,12 @@ const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
 
   return (
     <div className={styles.SearchResultCard} onClick={onCardClick}>
-      <img
+      <Image
         className={styles.SearchResultCard__img}
         src={searchResult.Poster}
         alt={`${searchResult.Title} poster`}
+        height={300}
+        width={250}
       />
 
       <section className={styles.SearchResultCard__details}>

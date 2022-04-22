@@ -28,9 +28,10 @@ $border-radius: 4px;
   // BEGIN: show details on hover
 
   &__img {
-    object-fit: fill;
-    width: $container-width;
-    height: $container-height;
+    // object-fit: fill;
+    // width: $container-width;
+    // height: $container-height;
+    border: 1px solid red !important;
     border-radius: $border-radius;
     // @IMPORTANT: provides color for alt text in the event images don't load
     color: $theme-white;

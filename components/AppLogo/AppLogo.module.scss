@@ -2,5 +2,27 @@
 
 .AppLogo {
   background: $theme-red;
-  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  > a {
+    color: $theme-white;
+    font-weight: bold;
+    text-decoration: unset !important;
+  }
+
+  &--small {
+    font-size: 14px;
+    padding: 2px 4px;
+  }
+
+  &--medium {
+    font-size: 24px;
+    padding: 2px 6px;
+  }
+
+  &--large {
+    font-size: 38px;
+    padding: 2px 8px;
+  }
 }

@@ -1,22 +1,25 @@
 import React, { FunctionComponent } from "react";
+import Image from "next/image";
 
-import { ISeries, IMovie } from "types/index";
+import { IMovie, ISeries } from "types/index";
 import { MEDIA_TYPES } from "constants/index";
 import styles from "./MediaCard.module.scss";
 
-type IMediaCardProps = {
+interface IMediaCardProps {
   media: IMovie | ISeries;
-};
+}
 
 const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
   // TODO: dry up code into util fn
   const [startYear] = media.Year?.split("–");
   return (
     <div className={styles.MediaCard}>
-      <img
+      <Image
         className={styles.MediaCard__img}
         src={media.Poster}
         alt={`${media.Title} poster`}
+        height={400}
+        width={300}
       />
 
       <section className={styles.MediaCard__details}>
@@ -69,6 +72,7 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
           className={styles.MediaCard__details__imdbLink}
           href={`https://www.imdb.com/title/${media.imdbID}`}
           target="_blank"
+          rel="noreferrer"
         >
           View on IMDB
         </a>

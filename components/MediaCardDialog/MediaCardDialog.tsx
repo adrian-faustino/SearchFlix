@@ -9,9 +9,9 @@ import AsyncComponentWrapper from "components/AsyncComponentWrapper";
 // TODO: remove
 import { MOVIE } from "constants/index";
 
-type IMediaCardDialogProps = {
-  imdbID;
-};
+interface IMediaCardDialogProps {
+  imdbID: string;
+}
 
 const MediaCardDialog: FunctionComponent<IMediaCardDialogProps> = ({
   imdbID,

@@ -19,7 +19,9 @@ const Search: NextPage = () => {
   return (
     <div className={styles.search}>
       <section className={styles.search__field}>
-        <AppLogo />
+        <AppLogo small />
+        <AppLogo medium />
+        <AppLogo large />
 
         {/* Search bar */}
         <TextField

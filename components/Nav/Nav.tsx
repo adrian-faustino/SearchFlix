@@ -4,13 +4,13 @@ import AppLogo from "components/AppLogo";
 import { APP_ROUTES } from "constants/index";
 import styles from "./Nav.module.scss";
 
-type INavProps = {};
+interface INavProps {}
 
 const Nav: FunctionComponent<INavProps> = () => {
   return (
     <nav className={styles.Nav}>
       <ol>
-        <AppLogo />
+        <AppLogo medium />
 
         <li>
           <a href={APP_ROUTES.home}>Home</a>

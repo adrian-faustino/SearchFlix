@@ -46,8 +46,13 @@ export interface ISeries extends IMedia {
   totalSeasons: string;
 }
 
-export interface IOmdbApiResponse = {
+export interface IOmdbApiResponse {
   Search: ISearchResult[];
   totalResults: string;
   Response: string;
-};
+}
+
+export type TGenericObject = { [key: string]: any };
+export type TGenericChildren = JSX.Element | JSX.Element[] | string;
+export type TGenericClickEvent = React.MouseEvent<HTMLElement>;
+export type TGenericChangeEvent = React.ChangeEvent<HTMLElement>;

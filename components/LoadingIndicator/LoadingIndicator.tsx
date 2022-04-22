@@ -3,7 +3,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 import styles from "./LoadingIndicator.module.scss";
 
-type ILoadingIndicatorProps = {};
+interface ILoadingIndicatorProps {}
 
 const LoadingIndicator: FunctionComponent<ILoadingIndicatorProps> = () => {
   return <CircularProgress />;

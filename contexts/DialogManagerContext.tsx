@@ -1,16 +1,25 @@
 import React, { useState, createContext, FunctionComponent } from "react";
 
-export const DialogManagerContext = createContext();
+import { TGenericObject, TGenericChildren } from "types/index";
 
-type IButtonProps = {};
+export const DialogManagerContext = createContext<TGenericObject>({});
+
+interface IButtonProps {
+  children: TGenericChildren;
+}
 
 const DialogManagerContextProvider: FunctionComponent<IButtonProps> = ({
   children,
 }) => {
-  const [dialogComponent, setDialogComponent] = useState(null);
-  const [dialogProps, setDialogProps] = useState(null);
+  const [dialogComponent, setDialogComponent] = useState<JSX.Element | null>(
+    null
+  );
+  const [dialogProps, setDialogProps] = useState<TGenericObject | null>(null);
 
-  const onOpenDialog = (dialogComponent, dialogProps) => {
+  const onOpenDialog = (
+    dialogComponent: JSX.Element,
+    dialogProps: TGenericObject
+  ) => {
     setDialogComponent(dialogComponent);
     if (dialogProps) setDialogProps(dialogProps);
   };

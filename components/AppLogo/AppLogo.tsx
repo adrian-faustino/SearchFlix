@@ -1,11 +1,33 @@
 import React, { FunctionComponent } from "react";
+import classNames from "classnames";
 
+import { APP_ROUTES } from "constants/index";
 import styles from "./AppLogo.module.scss";
 
-type IAppLogoProps = {};
+interface IAppLogoProps {
+  small?: boolean;
+  medium?: boolean;
+  large?: boolean;
+  className?: string;
+}
 
-const AppLogo: FunctionComponent<IAppLogoProps> = ({}) => {
-  return <span className={styles.AppLogo}>SearchFlix</span>;
+const AppLogo: FunctionComponent<IAppLogoProps> = ({
+  small,
+  medium,
+  large,
+  className,
+}) => {
+  const containerClassnames: string = classNames(styles.AppLogo, className, {
+    [styles["AppLogo--small"]]: small,
+    [styles["AppLogo--medium"]]: medium,
+    [styles["AppLogo--large"]]: large,
+  });
+
+  return (
+    <a className={containerClassnames} href={APP_ROUTES.home}>
+      <span>SearchFlix</span>
+    </a>
+  );
 };
 
 export default AppLogo;
