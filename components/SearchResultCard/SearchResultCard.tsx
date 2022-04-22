@@ -7,9 +7,6 @@ import MediaCardDialog from "components/MediaCardDialog";
 import { toTitleCase } from "utils/string";
 import styles from "./SearchResultCard.module.scss";
 
-// TODO: remove
-import { SERIES } from "constants/index";
-
 interface ISearchResultCardProps {
   searchResult: ISearchResult;
 }
@@ -47,10 +44,6 @@ const SearchResultCard: FunctionComponent<ISearchResultCardProps> = ({
       </section>
     </div>
   );
-};
-
-SearchResultCard.defaultProps = {
-  searchResult: {},
 };
 
 export default SearchResultCard;

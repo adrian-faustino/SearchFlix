@@ -9,9 +9,6 @@ import { OMDB_API_MIN_SEARCH_TERM_LEN } from "constants/index";
 import useSearchContainer from "./useSearchContainer";
 import styles from "./search.module.scss";
 
-// TODO: Remove
-import { SEARCH_RESULTS } from "constants/index";
-
 const Search: NextPage = () => {
   const { isFetching, searchTerm, onSearchFieldChange, searchResults } =
     useSearchContainer();
@@ -19,8 +16,6 @@ const Search: NextPage = () => {
   return (
     <div className={styles.search}>
       <section className={styles.search__field}>
-        <AppLogo small />
-        <AppLogo medium />
         <AppLogo large />
 
         {/* Search bar */}
@@ -36,7 +31,7 @@ const Search: NextPage = () => {
       {/* Search list */}
       <section className={styles.search__results}>
         <AsyncComponentWrapper isFetching={isFetching}>
-          {SEARCH_RESULTS.Search.map((result, i) => (
+          {searchResults.map((result: any, i) => (
             <SearchResultCard searchResult={result} key={i} />
           ))}
         </AsyncComponentWrapper>

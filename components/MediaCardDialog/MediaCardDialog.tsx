@@ -6,9 +6,6 @@ import { API_ROUTES } from "constants/index";
 import MediaCard from "components/MediaCard";
 import AsyncComponentWrapper from "components/AsyncComponentWrapper";
 
-// TODO: remove
-import { MOVIE } from "constants/index";
-
 interface IMediaCardDialogProps {
   imdbID: string;
 }
@@ -20,15 +17,10 @@ const MediaCardDialog: FunctionComponent<IMediaCardDialogProps> = ({
   const { response, error, isFetching } = useFetch(url);
 
   return (
-    // <AsyncComponentWrapper isFetching={isFetching}>
-    //   {response && <MediaCard media={response} />}
-    // </AsyncComponentWrapper>
-    <MediaCard media={MOVIE} />
+    <AsyncComponentWrapper isFetching={isFetching}>
+      {response && <MediaCard media={response} />}
+    </AsyncComponentWrapper>
   );
-};
-
-MediaCardDialog.defaultProps = {
-  media: {},
 };
 
 export default MediaCardDialog;

@@ -359,3 +359,26 @@ ol {
   font-family: "Roboto", sans-serif !important;
   box-sizing: border-box;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+a,
+button {
+  transition: all 0.2s;
+  &:hover {
+    filter: brightness(90%);
+    opacity: 0.95;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

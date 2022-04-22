@@ -22,7 +22,7 @@
 
       &__rating {
         background: $theme-grey;
-        padding: 2px 4px;
+        padding: 2px 8px;
         border-radius: 2px;
       }
     }
@@ -32,12 +32,16 @@
       gap: 4px;
 
       > small {
-        padding: 2px 4px;
+        padding: 2px 8px;
         border: 1px solid $theme-grey;
       }
     }
 
     &__descriptionList {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
       position: relative;
       &:before {
         content: "";
@@ -50,7 +54,7 @@
     }
 
     &__imdbLink {
-      padding: 2px 4px;
+      padding: 2px 8px;
       border-radius: 2px;
       color: $theme-black !important;
       width: max-content;

@@ -4,25 +4,32 @@
   background: $theme-red;
   border: 0.5px solid $theme-maroon;
   border-radius: 4px;
+  padding: 2px 8px;
   cursor: pointer;
 
   color: $theme-white;
   font-weight: bold;
   text-decoration: none;
 
+  // unset default anchor/button behaviors
+  &:hover {
+    filter: unset;
+    opacity: unset;
+  }
+  &:active {
+    transform: unset;
+  }
+
   &--small {
     font-size: 14px;
-    padding: 2px 4px;
   }
 
   &--medium {
     font-size: 24px;
-    padding: 2px 6px;
   }
 
   &--large {
     font-size: 38px;
-    padding: 2px 8px;
   }
 
   &__darkText {

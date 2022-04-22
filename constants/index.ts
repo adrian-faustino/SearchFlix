@@ -1,4 +1,4 @@
-import { ISearchResult, IMovie, ISeries } from "types/index.ts";
+import { IMovie, ISeries } from "types/index";
 
 export const APP_ROUTES = {
   home: "/",

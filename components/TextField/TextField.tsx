@@ -21,7 +21,7 @@ const TextField: FunctionComponent<ITextFieldProps> = ({
   value,
   label,
   className,
-  onChange,
+  onChange = emptyFn,
   helperText,
 }) => {
   const containerClassnames: string = classNames(className, styles.TextField);
@@ -36,10 +36,6 @@ const TextField: FunctionComponent<ITextFieldProps> = ({
       helperText={helperText}
     />
   );
-};
-
-TextField.defaultProps = {
-  onChange: emptyFn,
 };
 
 export default TextField;

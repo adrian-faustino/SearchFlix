@@ -92,8 +92,4 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
   );
 };
 
-MediaCard.defaultProps = {
-  media: {},
-};
-
 export default MediaCard;

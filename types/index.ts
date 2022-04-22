@@ -53,6 +53,6 @@ export interface IOmdbApiResponse {
 }
 
 export type TGenericObject = { [key: string]: any };
-export type TGenericChildren = JSX.Element | JSX.Element[] | string;
+export type TGenericChildren = React.ReactElement<any, any> | null;
 export type TGenericClickEvent = React.MouseEvent<HTMLElement>;
 export type TGenericChangeEvent = React.ChangeEvent<HTMLElement>;
