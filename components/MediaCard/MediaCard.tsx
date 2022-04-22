@@ -23,48 +23,59 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
       />
 
       <section className={styles.MediaCard__details}>
-        <h2>{media.Title}</h2>
+        <h1 className="color-attention">{media.Title}</h1>
 
         <div className={styles.MediaCard__details__subheader}>
-          <span>{startYear}</span>
+          <span className="bold">{startYear}</span>
           <span className={styles.MediaCard__details__subheader__rating}>
             {media.Rated}
           </span>
           {/* TODO: format time if over 60m */}
           {media.Type === MEDIA_TYPES.movie && (
-            <span>
+            <span className="bold">
               {media.Runtime}
               {/* TODO: format plural */}
             </span>
           )}
           {media.Type === MEDIA_TYPES.series && (
-            <small>{media.totalSeasons} season(s)</small>
+            <span>{media.totalSeasons} season(s)</span>
           )}
         </div>
 
         <div className={styles.MediaCard__details__genres}>
           {media.Genre.split(", ").map((genre, i) => (
-            <span key={i}>{genre}</span>
+            <small key={i}>{genre}</small>
           ))}
         </div>
 
-        <p>{media.Plot}</p>
+        <p className="color-secondary">{media.Plot}</p>
 
         <dl className={styles.MediaCard__details__descriptionList}>
           <dt>
-            <b>Starring:</b> {media.Actors}
+            <small>
+              <b>Starring: </b>
+              {media.Actors}
+            </small>
           </dt>
           <dt>
-            <b>Directed by:</b> {media.Director}
+            <small>
+              <b>Directed by: </b> {media.Director}{" "}
+            </small>
           </dt>
           <dt>
-            <b>Written by:</b> {media.Writer}
+            <small>
+              <b>Written by: </b> {media.Writer}{" "}
+            </small>
           </dt>
           <dt>
-            <b>Awards:</b> {media.Awards}
+            <small>
+              <b>Awards: </b> {media.Awards}{" "}
+            </small>
           </dt>
           <dt>
-            Released on {media.Released} {`(${media.Country})`}
+            <small className="color-disabled">
+              Released on {media.Released} {`(${media.Country})`}
+            </small>
           </dt>
         </dl>
 

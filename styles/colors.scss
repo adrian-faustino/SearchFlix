@@ -1,9 +1,16 @@
+/* App colors */
 $theme-red: #db0000;
 $theme-black: #000000;
 $theme-white: #ffffff;
 $theme-grey: #564d4d;
+$theme-dark-grey: #444444;
 $theme-maroon: #831010;
 
-$imdb-yellow: #deb522;
+$text-color-primary: $theme-white;
+$text-color-secondary: #b6babf;
+$text-color-disabled: #868c95;
+$text-color-attention: #deb522;
 
+/* External colors */
+$imdb-yellow: #deb522;
 $mui-grey: #383838;

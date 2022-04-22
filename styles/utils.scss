@@ -1,0 +1,17 @@
+@import "styles/colors";
+
+.color-primary {
+  color: $text-color-primary;
+}
+.color-secondary {
+  color: $text-color-secondary;
+}
+.color-disabled {
+  color: $text-color-disabled;
+}
+.color-attention {
+  color: $text-color-attention;
+}
+.bold {
+  font-weight: bold;
+}

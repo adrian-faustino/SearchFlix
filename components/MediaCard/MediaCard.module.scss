@@ -31,13 +31,22 @@
       display: flex;
       gap: 4px;
 
-      > span {
+      > small {
         padding: 2px 4px;
         border: 1px solid $theme-grey;
       }
     }
 
     &__descriptionList {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        height: 1px;
+        width: 100%;
+        background: $theme-dark-grey;
+      }
     }
 
     &__imdbLink {

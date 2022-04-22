@@ -5,6 +5,7 @@ import DialogManagerContextProvider from "contexts/DialogManagerContext";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import "styles/index.scss";
+import "styles/utils.scss";
 
 const darkTheme = createTheme({
   palette: {
