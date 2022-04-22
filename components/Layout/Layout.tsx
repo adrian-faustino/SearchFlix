@@ -18,16 +18,12 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Search Movies and TV Series" />
+        <title>SearchFlix</title>
+        <meta
+          name="description"
+          content="Search Movies, TV Series, and Games data"
+        />
         <link rel="icon" href="/favicon.ico" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
 
       <Nav />
