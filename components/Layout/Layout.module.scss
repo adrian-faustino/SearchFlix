@@ -1,6 +1,8 @@
+@import "styles/colors";
+
 .Layout {
   &__main {
+    background: $theme-black;
     min-height: 100vh;
-    border: 1px solid green;
   }
 }

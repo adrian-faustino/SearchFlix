@@ -1,3 +1,7 @@
+@import "styles/colors";
+
 .Footer {
-  border: 1px solid red;
+  background: $theme-red;
+  color: $theme-white;
+  padding: 10px;
 }
