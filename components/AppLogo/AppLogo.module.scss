@@ -2,14 +2,13 @@
 
 .AppLogo {
   background: $theme-red;
+  border: 0.5px solid $theme-maroon;
   border-radius: 4px;
   cursor: pointer;
 
-  > a {
-    color: $theme-white;
-    font-weight: bold;
-    text-decoration: unset !important;
-  }
+  color: $theme-white;
+  font-weight: bold;
+  text-decoration: none;
 
   &--small {
     font-size: 14px;
@@ -24,5 +23,9 @@
   &--large {
     font-size: 38px;
     padding: 2px 8px;
+  }
+
+  &__darkText {
+    color: $theme-black;
   }
 }

@@ -27,16 +27,14 @@ const TextField: FunctionComponent<ITextFieldProps> = ({
   const containerClassnames: string = classNames(className, styles.TextField);
 
   return (
-    <>
-      <MuiTextField
-        name={name}
-        value={value}
-        label={label}
-        className={containerClassnames}
-        onChange={onChange}
-        helperText={helperText}
-      />
-    </>
+    <MuiTextField
+      name={name}
+      value={value}
+      label={label}
+      className={containerClassnames}
+      onChange={onChange}
+      helperText={helperText}
+    />
   );
 };
 
