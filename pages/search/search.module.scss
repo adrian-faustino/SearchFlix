@@ -9,7 +9,6 @@
 
     background: $theme-grey;
     color: $theme-white;
-
     padding: 20px;
   }
 
@@ -23,8 +22,5 @@
     $gap-between-items: 20px;
     gap: $gap-between-items;
     padding: $gap-between-items;
-  }
-
-  &__loadingIndicator {
   }
 }

@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import classNames from "classnames";
 
+import Anchor from "components/Anchor";
 import { APP_ROUTES } from "constants/index";
 import styles from "./AppLogo.module.scss";
 
@@ -24,10 +25,10 @@ const AppLogo: FunctionComponent<IAppLogoProps> = ({
   });
 
   return (
-    <a className={containerClassnames} href={APP_ROUTES.welcome}>
+    <Anchor className={containerClassnames} href={APP_ROUTES.welcome}>
       <span className={styles.AppLogo__darkText}>Search</span>
       <span>Flix</span>
-    </a>
+    </Anchor>
   );
 };
 

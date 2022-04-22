@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import Image from "next/image";
 
+import Anchor from "components/Anchor";
 import { IMovie, ISeries } from "types/index";
 import { MEDIA_TYPES } from "constants/index";
 import styles from "./MediaCard.module.scss";
@@ -79,14 +80,12 @@ const MediaCard: FunctionComponent<IMediaCardProps> = ({ media }) => {
           </dt>
         </dl>
 
-        <a
+        <Anchor
           className={styles.MediaCard__details__imdbLink}
           href={`https://www.imdb.com/title/${media.imdbID}`}
-          target="_blank"
-          rel="noreferrer"
         >
           View on IMDB
-        </a>
+        </Anchor>
       </section>
     </div>
   );
