@@ -1,7 +1,7 @@
 import { IMovie, ISeries } from "types/index";
 
 export const APP_ROUTES = {
-  home: "/",
+  welcome: "/welcome",
   search: "/search",
 };
 

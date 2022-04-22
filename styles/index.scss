@@ -382,3 +382,8 @@ button {
     transform: scale(0.98);
   }
 }
+
+// @important: prevent 'white' flicker when navigating to different pages
+html {
+  background: black;
+}

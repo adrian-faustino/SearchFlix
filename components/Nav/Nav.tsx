@@ -13,7 +13,7 @@ const Nav: FunctionComponent<INavProps> = () => {
         <AppLogo medium />
 
         <li>
-          <a href={APP_ROUTES.home}>Home</a>
+          <a href={APP_ROUTES.welcome}>Home</a>
         </li>
 
         <li>

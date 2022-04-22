@@ -24,7 +24,7 @@ const AppLogo: FunctionComponent<IAppLogoProps> = ({
   });
 
   return (
-    <a className={containerClassnames} href={APP_ROUTES.home}>
+    <a className={containerClassnames} href={APP_ROUTES.welcome}>
       <span className={styles.AppLogo__darkText}>Search</span>
       <span>Flix</span>
     </a>

@@ -4,6 +4,9 @@
   background: $theme-black;
   color: $theme-white;
 
+  position: relative;
+  box-shadow: 0 0 1px $theme-white;
+
   > ol {
     display: flex;
     align-items: center;
